@@ -1,0 +1,17 @@
+* Thu Mar 4 2010 Zhu Yanhai <yanhai.zhu@linux.intel.com> - 1.5
+- Add fix-the-cmd-code-when-delivering.patch to fix MB#9932
+
+* Mon Feb 22 2010 Anas Nashif <anas.nashif@intel.com> - 1.5
+- Use spectacle
+
+* Wed Feb 18 2009 Yin Kangkai <kangkai.yin@intel.com> 1.5
+- Upgrade to 1.5
+
+* Thu Dec 18 2008 Arjan van de Ven <arjan@linux.intel.com> 1.4
+- Use standard specfile
+
+* Fri Nov 25 2008 - Martin Xu <martin.xu@intel.com>
+- clean the doc from devel package
+
+* Fri Nov 11 2008 - Martin Xu <martin.xu@intel.com>
+- initialized openobex-1.4 package
