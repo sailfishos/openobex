@@ -17,6 +17,8 @@ URL:        http://openobex.org
 Source0:    http://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.gz
 Source100:  openobex.yaml
 Patch0:     fix-the-cmd-code-when-delivering.patch
+Patch1:     001_null_check.patch
+Patch2:     ensure-socket-buffer-size.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(libusb)
@@ -43,6 +45,10 @@ Open OBEX shared c-library
 
 # fix-the-cmd-code-when-delivering.patch
 %patch0 -p1
+# 001_null_check.patch
+%patch1 -p1
+# ensure-socket-buffer-size.patch
+%patch2 -p1
 # >> setup
 # << setup
 
