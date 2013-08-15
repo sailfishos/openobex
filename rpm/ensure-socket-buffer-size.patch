@@ -1,0 +1,24 @@
+diff --git a/lib/obex.c b/lib/obex.c
+index 54cba70..f7609bd 100644
+--- a/lib/obex.c
++++ b/lib/obex.c
+@@ -1252,6 +1252,19 @@ int CALLAPI FdOBEX_TransportSetup(obex_t *self, int rfd, int wfd, int mtu)
+ 	self->fd = rfd;
+ 	self->writefd = wfd;
+ 	self->trans.mtu = mtu ? mtu : self->mtu_tx_max;
++
++	/* Make sure socket descriptors have enough send buffer,
++	   otherwise writes may fail if MTU is larger than the
++	   default send buffer. */
++	{
++		socklen_t optlen = sizeof(int);
++		int sndbuf = 65536;
++		setsockopt(self->fd, SOL_SOCKET, SO_SNDBUF,
++			   &sndbuf, optlen);
++		setsockopt(self->writefd, SOL_SOCKET, SO_SNDBUF,
++			   &sndbuf, optlen);
++	}
++
+ 	return obex_transport_connect_request(self);
+ }
+ 
