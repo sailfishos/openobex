@@ -24,7 +24,6 @@ Open OBEX shared c-library
 Summary:    Files for development of applications which will use OBEX
 Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
-Requires:   bluez-libs-devel
 
 %description devel
 Open OBEX shared c-library
